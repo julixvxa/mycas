@@ -1,0 +1,930 @@
+/* Global Settings */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* General Styling for Search Panels */
+#searching, #other-searching {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Input Fields for Search Panels */
+#search-bar, #search-bar-my-info, #other-search-bar-my-info {
+    flex: 1;
+    min-width: 180px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#search-bar:focus, #search-bar-my-info:focus, #other-search-bar-my-info:focus {
+    border-color: rgb(29, 73, 120);
+    box-shadow: 0 0 8px rgba(29, 73, 120, 0.2);
+}
+
+/* Dropdown Styling for Search Panels */
+#search-category, #search-month, #search-privacy,
+#search-category-my-info, #search-month-my-info, #search-privacy-my-info,
+#other-search-category-my-info, #other-search-month-my-info, #other-search-privacy-my-info {
+    flex: 1;
+    min-width: 150px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    background: linear-gradient(135deg, #f0f4f8, #ffffff);
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+select:hover, select:focus {
+    border-color: rgb(29, 73, 120);
+    cursor: pointer;
+}
+
+/* Buttons for Search Panels */
+#search-button, #search-clear-all, #search-button-my-info, #search-clear-all-my-info,
+#other-search-button-my-info, #other-search-clear-all-my-info {
+    background-color: rgb(29, 73, 120);
+    color: white;
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#search-button:hover, #search-clear-all:hover, 
+#search-button-my-info:hover, #search-clear-all-my-info:hover,
+#other-search-button-my-info:hover, #other-search-clear-all-my-info:hover {
+    background-color: #1d4d7a;
+    transform: scale(1.05);
+}
+
+#search-button:active, #search-clear-all:active,
+#search-button-my-info:active, #search-clear-all-my-info:active,
+#other-search-button-my-info:active, #other-search-clear-all-my-info:active {
+    transform: scale(0.95);
+}
+
+/* Post Creator Panel Styling */
+#post-creator-panel {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    border: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+}
+
+#post-creator-panel:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+#post-creator-panel h2 {
+    color: rgb(29, 73, 120);
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    border-bottom: 3px solid #e1e5eb;
+    padding-bottom: 8px;
+}
+
+/* Textarea for Post Creator */
+#post-text {
+    width: 100%;
+    padding: 14px;
+    margin: 12px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #333;
+    transition: all 0.3s ease;
+    min-height: 100px;
+    background-color: #f9f9f9;
+}
+
+#post-text:focus {
+    border-color: rgb(29, 73, 120);
+    box-shadow: 0 0 10px rgba(29, 73, 120, 0.2);
+    background-color: #fff;
+    outline: none;
+}
+
+/* Dropdowns in Post Creator */
+#post-category, #post-month, #post-privacy {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    background: linear-gradient(135deg, #f0f4f8, #ffffff);
+    color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 15px;
+}
+
+#post-category:focus, #post-month:focus, #post-privacy:focus {
+    border-color: rgb(29, 73, 120);
+    box-shadow: 0 0 8px rgba(29, 73, 120, 0.2);
+}
+
+/* File Input Styling */
+#post-media {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Post Button Styling */
+#post-creator-panel button[type="submit"], #post-creator-panel button {
+    background-color: rgb(29, 73, 120);
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    margin-top: 20px;
+    width: 100%;
+}
+
+#post-creator-panel button[type="submit"]:hover, #post-creator-panel button:hover {
+    background-color: #1d4d7a;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#post-creator-panel button[type="submit"]:active, #post-creator-panel button:active {
+    transform: scale(0.95);
+    box-shadow: none;
+}
+
+/* Hover effect for the input and button sections */
+#post-creator-panel input:focus, #post-creator-panel select:focus {
+    border-color: rgb(29, 73, 120);
+    box-shadow: 0 0 8px rgba(29, 73, 120, 0.2);
+}
+
+#post-creator-panel button[type="submit"]:focus, #post-creator-panel button:focus {
+    outline: none;
+    border: none;
+    box-shadow: 0 0 8px rgba(29, 73, 120, 0.4);
+}
+
+
+/* User Info Panel Styling */
+#user-info-panel, #other-user-info-panel {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+#user-info-panel h2, #other-user-info-panel h2 {
+    color: rgb(29, 73, 120);
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #e1e5eb;
+    padding-bottom: 5px;
+}
+
+/* User Info Content */
+#user-info, #other-user-info {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#user-info p, #other-user-info p {
+    margin: 5px 0;
+}
+
+/* Friend Request & Status Section */
+#friend, #latest-friends {
+    margin-bottom: 20px;
+}
+
+#friend button, #latest-friends button {
+    background-color: rgb(29, 73, 120);
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-right: 5px;
+}
+
+#friend button:hover, #latest-friends button:hover {
+    background-color: #1d4d7a;
+    transform: scale(1.05);
+}
+
+#friend button:active, #latest-friends button:active {
+    transform: scale(0.95);
+}
+
+/* User Statistics Section */
+.statistics {
+    background-color: #f9fafb;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    margin-bottom: 20px;
+}
+
+.statistics h2 {
+    color: rgb(29, 73, 120);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.statistics p {
+    color: #555;
+}
+
+.statistics ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.statistics ul li {
+    padding: 5px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Latest Friends Section */
+#latest-friends h3 {
+    color: rgb(29, 73, 120);
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#latest-friends ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#latest-friends ul li {
+    padding: 5px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+#latest-friends ul li a {
+    color: rgb(29, 73, 120);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#latest-friends ul li a:hover {
+    color: #1d4d7a;
+    text-decoration: underline;
+}
+
+/* Search Bar in User Info Panels */
+#searching, #other-searching {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+#search-bar-my-info, #other-search-bar-my-info {
+    flex: 1;
+    min-width: 180px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#search-bar-my-info:focus, #other-search-bar-my-info:focus {
+    border-color: rgb(29, 73, 120);
+    box-shadow: 0 0 8px rgba(29, 73, 120, 0.2);
+}
+
+/* Dropdown Styling in User Info Panels */
+#search-category-my-info, #search-month-my-info, #search-privacy-my-info,
+#other-search-category-my-info, #other-search-month-my-info, #other-search-privacy-my-info {
+    flex: 1;
+    min-width: 150px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    background: linear-gradient(135deg, #f0f4f8, #ffffff);
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+select:hover, select:focus {
+    border-color: rgb(29, 73, 120);
+    cursor: pointer;
+}
+
+/* Buttons in User Info Panels */
+#search-button-my-info, #search-clear-all-my-info, #other-search-button-my-info, #other-search-clear-all-my-info {
+    background-color: rgb(29, 73, 120);
+    color: white;
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#search-button-my-info:hover, #search-clear-all-my-info:hover,
+#other-search-button-my-info:hover, #other-search-clear-all-my-info:hover {
+    background-color: #1d4d7a;
+    transform: scale(1.05);
+}
+
+#search-button-my-info:active, #search-clear-all-my-info:active,
+#other-search-button-my-info:active, #other-search-clear-all-my-info:active {
+    transform: scale(0.95);
+}
+
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: rgb(29, 73, 120);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    animation: navbarSlideDown 0.8s ease forwards;
+}
+
+@keyframes navbarSlideDown {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: #1d4d7a;
+}
+
+#logout-button {
+    background-color: #ff4b5c;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#logout-button:hover {
+    background-color: #d43b4b;
+}
+
+/* Button Styling */
+button {
+    background-color: rgb(29, 73, 120);
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 10px;
+}
+
+button:hover {
+    background-color: #1d4d7a;
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+
+/* Panel Styling */
+.panel, .statistics, .user-info-panel, .notification-panel {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideIn 0.5s forwards;
+}
+
+/* Notification Styling */
+.notification {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid rgb(29, 73, 120);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.notification p {
+    margin: 0;
+    color: #333;
+    font-size: 14px;
+}
+
+/* See More Button in Notifications */
+.notification button {
+    background-color: #1d4d7a;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.notification button:hover {
+    background-color: #174265;
+}
+
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.panel h2, .statistics h2, .user-info-panel h2, .notification-panel h2 {
+    color: rgb(29, 73, 120);
+    font-weight: bold;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #e1e5eb;
+    padding-bottom: 5px;
+}
+
+/* My Info & Statistics Panels */
+.user-info-panel, .statistics {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.user-info-panel h3, .statistics h3 {
+    color: rgb(29, 73, 120);
+    font-weight: bold;
+    margin-top: 0;
+    padding-bottom: 5px;
+}
+
+.statistics ul, .user-info-panel ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+}
+
+/* General container styling for each post card */
+.post-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 16px;
+    margin: 15px 0;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Post title and user info */
+.post-card-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(29, 73, 120);
+    margin-bottom: 8px;
+    position: relative;
+}
+
+.post-card-title::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, rgb(29, 73, 120), #1d4d7a);
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.post-card-title:hover::after {
+    width: 100%;
+}
+
+.post-date {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgb(29, 73, 120);
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    opacity: 0;
+    animation: dateFadeIn 0.5s 0.5s forwards;
+}
+
+@keyframes dateFadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Main post content */
+.post-card-content {
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+/* Tag styling */
+.post-tag {
+    display: inline-block;
+    background-color: rgb(29, 73, 120);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.post-tag:hover {
+    background-color: #1d4d7a;
+}
+
+/* Details section with month and privacy */
+.post-details {
+    font-size: 14px;
+    color: #666;
+    margin-top: 8px;
+    margin-bottom: 16px;
+}
+
+/* Media section styling */
+.post-media img {
+    border-radius: 8px;
+    margin-top: 8px;
+    margin-bottom: 16px;
+}
+
+
+/* Likes and comments sections */
+.post-likes, .post-comments {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #e0e0e0;
+    color: #444;
+    font-size: 15px;
+}
+
+/* Comments list */
+.comments-list .comment {
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.comment-author {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.comment-text {
+    margin: 4px 0;
+    font-size: 15px;
+}
+
+.comment-date {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 4px;
+}
+
+/* Comment form */
+.post-comments form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+textarea[name="commentText"] {
+    border: 1px solid #ddd;
+    padding: 8px;
+    border-radius: 6px;
+    font-size: 15px;
+    resize: vertical;
+    min-height: 60px;
+}
+
+button#comment-submit {
+    padding: 8px 16px;
+    background-color: rgb(29, 73, 120);
+    color: white;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 8px;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+button#comment-submit:hover {
+    background-color: #1d4d7a;
+}
+
+/* Action buttons (like, delete) */
+.panel-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.panel-actions button {
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    color: #fff;
+    background-color: rgb(29, 73, 120);
+    transition: background-color 0.3s;
+}
+
+.panel-actions button:hover {
+    background-color: #1d4d7a;
+}
+
+/* Input Fields */
+input[type="text"], input[type="email"], input[type="password"], select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: rgb(29, 73, 120);
+    box-shadow: 0 0 8px rgba(29, 73, 120, 0.2);
+}
+
+/* Dropdown Styling */
+select {
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    background: linear-gradient(135deg, #f0f4f8, #ffffff);
+    color: #333;
+    appearance: none;
+    transition: border-color 0.3s ease;
+}
+
+select:hover, select:focus {
+    border-color: rgb(29, 73, 120);
+    cursor: pointer;
+}
+
+/* Responsive Layout */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+
+    button {
+        width: 100%;
+        margin: 8px 0;
+    }
+
+    .panel, .post-card {
+        padding: 15px;
+    }
+
+    .post-card-title {
+        font-size: 16px;
+    }
+
+    .post-card-content {
+        font-size: 14px;
+    }
+}
+
+/* Carousel container */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+    overflow: hidden;
+  }
+  
+  /* Carousel */
+  .carousel {
+    display: flex;
+    flex-direction: row; /* Arrange items horizontally */
+  }
+  
+  /* Carousel item */
+  .carousel-item {
+    display: none;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .carousel-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  /* Navigation arrows */
+  .carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* Vertically center the arrows */
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px 15px; /* Ensure consistent size */
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 100;
+    transition: transform 0.2s ease, background-color 0.3s ease; /* Smooth transition */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Left arrow (positioned to the left side of the carousel) */
+  .carousel-arrow.left {
+    left: 10px;
+  }
+  
+  /* Right arrow (positioned to the right side of the carousel) */
+  .carousel-arrow.right {
+    right: 10px;
+  }
+  
+  /* Hover effect for arrows */
+  .carousel-arrow:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Darker background */
+    transform: translateY(-50%) scale(1.1); /* Slightly scale the arrow without shifting position */
+  }
+  
+  /* Modal overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  /* Modal dialog box */
+  .modal {
+    background: white;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  /* Style for the message */
+  .modal p {
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+  
+  /* Close Button */
+  #closeAlert {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  #closeAlert:hover {
+    background-color: #555;
+  }
+/* Container for popup messages */
+.popup-area {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  /* Individual popup message */
+  .popup-message {
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease, fadeOut 1.2s ease forwards;
+  }
+  
+  /* Popup animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeOut {
+    50% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+  }
+    
