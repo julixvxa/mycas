@@ -46,7 +46,9 @@ console.log('process.env:', process.env);
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Database setup
-const db = new sqlite3.Database('./db/database.sqlite');
+const Database = require('better-sqlite3');
+const db = new Database('database.db');
+
 
 
 const saltRounds = 10;
