@@ -46,9 +46,7 @@ console.log('process.env:', process.env);
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Database setup
-const Database = require('better-sqlite3');
-const db = new Database('database.db');
-
+const db = new sqlite3.Database('./db/database.sqlite');
 
 
 const saltRounds = 10;
@@ -1270,6 +1268,6 @@ app.post('/change-password', async (req, res) => {
 
 
 
-app.listen(process.env.PORT || 3000, () => {
-    console.log("On work")
-})
+app.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}/`);
+});
