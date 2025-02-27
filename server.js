@@ -46,8 +46,11 @@ console.log('process.env:', process.env);
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Database setup
-const db = new sqlite3.Database('./db/database.sqlite');
+// npm install @sqlitecloud/drivers
 
+const { Database } = require('@sqlitecloud/drivers');
+const db = new Database("sqlitecloud://cylwjp4pnz.g6.sqlite.cloud:8860/database.sqlite?apikey=RMPKyAaqJVptXCsmsT28T4hMrVxWwRbAkf9wWAWpzh0");
+const result = db.sql`SELECT * FROM <tablename>;`;
 
 const saltRounds = 10;
 
